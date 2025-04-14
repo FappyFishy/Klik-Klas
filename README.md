@@ -33,8 +33,7 @@ Includes role-based access for students and teachers.
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/FappyFishy/Groep4.git
-   cd room-booking-app
+   git clone https://github.com/FappyFishy/Klik-Klas.git
 
 
 ## Tasks
