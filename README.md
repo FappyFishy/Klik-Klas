@@ -44,7 +44,7 @@ Includes role-based access for students and teachers.
 - **Unit Tests** = Check if your logic is working correctly
 - **Swagger UI** = Auto-generate API documentation + test UI
 
-## 4. Create a Workflow
+## Create a Workflow
 To avoid messing things up:
 
 Use branches (e.g., feature-login, fix-database).
