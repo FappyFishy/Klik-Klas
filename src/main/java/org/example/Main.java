@@ -13,6 +13,7 @@ import utils.HibernateSessionManager;
 public class Main {
 	ArrayList<Student> studenten = new ArrayList<Student>();
 	ArrayList<Docent> docenten = new ArrayList<Docent>();
+	ArrayList<Ruimte> ruimtes = new ArrayList<Ruimte>();
     public static void main(String[] args) {
         System.out.println("Hello, World!");
         
@@ -41,5 +42,20 @@ public class Main {
   
     		docenten.add(nieuw);
     	}
+    }
+    
+    public void registreerRuimte(String naam, int capaciteit, String faciliteit) {
+    	Ruimte nieuw = new Ruimte(naam, capaciteit, faciliteit);
+    	DAOFactory.getTheFactory().getRuimteDAO().saveOrUpdate(nieuw);
+    	ruimtes.add(nieuw);
+    }
+    
+    public Ruimte kiesRuimte(String naam) {
+    	for (Ruimte r : ruimtes) {
+    		if (r.getNaam() == naam) {
+    			return r;
+    		}
+    	}
+    	return null;
     }
 }
