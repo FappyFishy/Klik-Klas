@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Klik&Klas - Overzicht</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+<header class="blue-header">
+    <h1>Klik&Klas</h1>
+</header>
+
+<main>
+    <h2>Ruimte</h2>
+
+    <div class="ruimte-filters">
+        <label><input type="checkbox" id="beschikbaarCheckbox" checked> Beschikbaar</label>
+        <label><input type="checkbox" id="bezetCheckbox" checked> Bezet</label>
+    </div>
+
+    <div class="ruimtes-grid">
+        <div class="ruimte-tile beschikbaar">
+            <h3>Ruimte 1</h3>
+            <img src="icons/people.svg" alt="ruimte" />
+        </div>
+        <div class="ruimte-tile bezet">
+            <h3>Ruimte 2</h3>
+            <img src="icons/people.svg" alt="ruimte" />
+        </div>
+        <div class="ruimte-tile beschikbaar">
+            <h3>Ruimte 3</h3>
+            <img src="icons/people.svg" alt="ruimte" />
+        </div>
+        <div class="ruimte-tile bezet">
+            <h3>Ruimte 4</h3>
+            <img src="icons/people.svg" alt="ruimte" />
+        </div>
+        <div class="ruimte-tile beschikbaar">
+            <h3>Ruimte 5</h3>
+            <img src="icons/people.svg" alt="ruimte" />
+        </div>
+        <div class="ruimte-tile bezet">
+            <h3>Ruimte 6</h3>
+            <img src="icons/people.svg" alt="ruimte" />
+        </div>
+    </div>
+</main>
+
+<script>
+    const beschikbaarCheckbox = document.getElementById('beschikbaarCheckbox');
+    const bezetCheckbox = document.getElementById('bezetCheckbox');
+    const tiles = document.querySelectorAll('.ruimte-tile');
+
+    function filterRuimtes() {
+        tiles.forEach(tile => {
+            if (tile.classList.contains('beschikbaar')) {
+                tile.style.display = beschikbaarCheckbox.checked ? 'block' : 'none';
+            }
+            if (tile.classList.contains('bezet')) {
+                tile.style.display = bezetCheckbox.checked ? 'block' : 'none';
+            }
+        });
+    }
+
+    beschikbaarCheckbox.addEventListener('change', filterRuimtes);
+    bezetCheckbox.addEventListener('change', filterRuimtes);
+</script>
+</body>
+</html>
