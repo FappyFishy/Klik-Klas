@@ -2,60 +2,23 @@ package org.example;
 
 import java.util.ArrayList;
 
-import org.hibernate.Session;
-
 import gebruikers.Docent;
 import gebruikers.Student;
-import factories.DAOFactories;
-import factories.DAOFactory;
-import utils.HibernateSessionManager;
 
 public class Main {
 	ArrayList<Student> studenten = new ArrayList<Student>();
 	ArrayList<Docent> docenten = new ArrayList<Docent>();
-	ArrayList<Ruimte> ruimtes = new ArrayList<Ruimte>();
     public static void main(String[] args) {
         System.out.println("Hello, World!");
-        
-        DAOFactory.setTheFactory(DAOFactories.HIBERNATE.getTheFactory());
-
-		Session session = HibernateSessionManager.getSessionFactory().getCurrentSession();
-		session.beginTransaction();
-		
-		Student nieuw = new Student("test","test","test");
-		
-		
-		DAOFactory.getTheFactory().getStudentDAO().saveOrUpdate(nieuw);
-		
-		HibernateSessionManager.getSessionFactory().getCurrentSession().getTransaction().commit();
-		HibernateSessionManager.shutdown();
     }
-    public void registreerGebruiker(String gebruikersNaam, String wachtwoord, String email) {
-    	if (email.contains("@student.scalda.nl")) {
-    		Student nieuw = new Student(gebruikersNaam, wachtwoord, email);
-    		DAOFactory.getTheFactory().getStudentDAO().saveOrUpdate(nieuw);
+    public void registreerGebruiker(int type) {
+    	if (type == 1) {
+    		Student nieuw = new Student();
     		studenten.add(nieuw);
     	}
-    	if (email.contains("@scalda.nl")) {
-    		Docent nieuw = new Docent(gebruikersNaam, wachtwoord, email);
-    		DAOFactory.getTheFactory().getDocentDAO().saveOrUpdate(nieuw);
-  
+    	if (type == 2) {
+    		Docent nieuw = new Docent();
     		docenten.add(nieuw);
     	}
-    }
-    
-    public void registreerRuimte(String naam, int capaciteit, String faciliteit) {
-    	Ruimte nieuw = new Ruimte(naam, capaciteit, faciliteit);
-    	DAOFactory.getTheFactory().getRuimteDAO().saveOrUpdate(nieuw);
-    	ruimtes.add(nieuw);
-    }
-    
-    public Ruimte kiesRuimte(String naam) {
-    	for (Ruimte r : ruimtes) {
-    		if (r.getNaam() == naam) {
-    			return r;
-    		}
-    	}
-    	return null;
     }
 }

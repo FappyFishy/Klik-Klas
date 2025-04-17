@@ -7,16 +7,14 @@
 	<session-factory>
 
 		<property name="hbm2ddl.auto">update</property>
-      	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>  
-      	<property name="connection.url">jdbc:mysql://localhost:3306/klikenklas?createDatabaseIfNotExist=true</property>
+      	<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>  
+      	<property name="connection.url">jdbc:mysql://localhost:3306/hibertest?createDatabaseIfNotExist=true</property>
 		<property name="hibernate.current_session_context_class">thread</property>
       	<property name="connection.username">root</property>  
       	<property name="connection.password">admin</property>  
       	<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 		
-		<mapping class="gebruikers.Student"/>
-		
-		<mapping class="gebruikers.Ruimte"/>
+		<mapping class="nl.delphinity.sample_hibernate_project.domain.Employee"/>
 
 
 	</session-factory>
