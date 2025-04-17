@@ -1,7 +1,7 @@
 header {
-    background-color: rgb(97, 173, 231);
-    height: 75px;
-    margin-bottom: 20px;
+  background-color: rgb(97, 173, 231);
+  height: 75px;
+  margin-bottom: 20px;
 }
 
 .logo {
@@ -9,21 +9,25 @@ header {
   margin-left: 35px;
 }
 
+.b {
+  vertical-align: middle;
+}
+
 .cont {
-    text-align: center;
+  text-align: center;
 }
 
 .child {
-    border: 5px solid rgb(207, 207, 216);
-    width: 30%;
-    height: 350px;
-   display: inline-block;
-   margin: 10px;
-
+  border: 5px solid rgb(109, 190, 225);
+  width: 30%;
+  height: 350px;
+  display: inline-block;
+  margin: 10px;
+border-radius: 30px;
 }
 
 .naam1 {
-margin-left: 25px;
+  margin-left: 25px;
 }
 
 .img1 {
