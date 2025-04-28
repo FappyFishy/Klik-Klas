@@ -1,0 +1,36 @@
+header {
+    background-color: rgb(97, 173, 231);
+    height: 75px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 45px;
+    margin-left: 35px;
+}
+
+#mycard {
+    margin-top: 30px;
+    margin-left: 50%;
+    float: left;
+    position: absolute;
+}
+
+#mycard2 {
+    margin-top: 30px;
+    margin-right: 50%;
+    float: right;
+    position: relative;
+}
+
+.calendar-weekdays {
+    margin-top: 25px;
+    margin-right: 570px;
+    font-size: 20px;
+}
+
+.invoer {
+    margin-top: 150px;
+    font-size: 25px;
+}
+
